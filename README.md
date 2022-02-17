@@ -1,7 +1,7 @@
 # writing-a-vacation-report
 
-<img src="https://user-images.githubusercontent.com/79898245/154544882-860a4fa1-6dda-4129-888c-79113ba8313c.png" align="right">
-<img src="https://user-images.githubusercontent.com/79898245/154544519-14e64068-9d45-49e2-9fb8-d291f137a16a.png">
+<img src="https://user-images.githubusercontent.com/79898245/154544882-860a4fa1-6dda-4129-888c-79113ba8313c.png" align="right" width="400">
+<img src="https://user-images.githubusercontent.com/79898245/154544519-14e64068-9d45-49e2-9fb8-d291f137a16a.png" width="400">
 
 ---
 
