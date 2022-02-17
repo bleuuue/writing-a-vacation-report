@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\banan\Desktop\Jung\학교\2학년\현장실습\일본\1\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2458196821.index
+4157569625.index
+760902390.index
+4076646481.index
+3192251983.index
+1024357354.index

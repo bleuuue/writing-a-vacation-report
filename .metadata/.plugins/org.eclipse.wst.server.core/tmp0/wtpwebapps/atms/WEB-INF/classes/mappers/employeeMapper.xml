@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.attmng.atms.mappers.employee">
+
+	<select id="getLoginInfo" parameterType="map" resultType="login">
+		SELECT * FROM t_employee
+	</select>
+
+	<select id="LoginPOST" resultType="EmployeeVO">
+		select id, password, emp_name,
+		comName_ryak, pos_name, dep_name, adm_code
+		from t_employee e, t_company
+		c, t_department d, t_position p
+		where e.com_code = c.com_code
+		and e.pos_code = p.pos_code
+		and e.dep_code = d.dep_code
+		and id = #{id}
+	</select>
+
+	<select id="DepartmentPOST" resultType="EmployeeVO">
+		SELECT * FROM t_affiliation
+		inner join t_department
+		ON t_affiliation.dep_code = t_department.dep_code
+		where com_name = 'CSS'
+	</select>
+
+	<insert id="JoinPOST">
+		INSERT INTO T_EMPLOYEE(
+		id,
+		password,
+		emp_name,
+		gender,
+		entry_date,
+		com_code,
+		dep_code,
+		pos_code,
+		mail,
+		address,
+		del_cd
+		)VALUES(
+		#{id},
+		#{password},
+		#{emp_name},
+		#{gender},
+		#{entry_date},
+		#{com_code},
+		#{dep_code},
+		#{pos_code},
+		#{mail},
+		#{address},
+		0
+		)
+	</insert>
+	
+	<select id="empList" resultType="EmployeeVO">
+		select *
+		from t_employee e, t_company
+		c, t_department d, t_position p
+		where e.com_code = c.com_code
+		and e.pos_code = p.pos_code
+		and e.dep_code = d.dep_code
+		and id = #{id}
+	</select>
+	
+	<select id="JoinGET" resultType="JoinVO">
+		SELECT * FROM t_affiliation af, t_department dep, t_company com
+		where af.dep_code = dep.dep_code
+		AND af.com_name = com.comName_ryak
+		and com.com_code =  #{com_code}
+	</select>
+	
+	
+	<update id="Modify">
+		update t_employee
+		set
+		com_code = #{com_code},
+		dep_code = #{dep_code},
+		pos_code = #{pos_code},
+		gender = #{gender},
+		mail = #{mail},
+		cellphone = #{cellphone},
+		address = #{address},
+		mail = #{mail},
+		entry_date= #{entry_date}
+		where id = #{id}
+		and password = #{password}
+	</update>
+	
+	<select id="Idcheck" resultType="JoinVO">
+	SELECT * FROM t_employee
+	where id=#{id}	
+	</select> 
+
+	<select id="GetInfo" resultType="EmployeeVO">
+		SELECT * FROM
+		attendance_management_system.t_employee
+		inner join attendance_management_system.t_company
+		ON attendance_management_system.t_company.com_code =
+		attendance_management_system.t_employee.com_code;
+	</select>
+</mapper>

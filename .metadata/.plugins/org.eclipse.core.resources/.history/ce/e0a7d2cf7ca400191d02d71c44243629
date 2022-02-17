@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.attmng.atms.mappers.DayOffRegistration">
+	<insert id="dayOffRegistration" parameterType="map">
+		INSERT INTO t_attendance(id, key_year_month,
+		key_day, reg_id, reg_date, del_cd, s_time, e_time,
+		br_time, op_time, remarks, notice)
+		VALUES(#{id}, #{yearMonth}, #{day}, #{reg_id}, 
+		#{reg_date}, #{flag}, #{defTimeFormat}, #{defTimeFormat},
+		#{defDoubleFormat}, #{defDoubleFormat}, 
+		#{defVarcharFormat}, #{defVarcharFormat})
+	</insert>
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.attmng.atms.mappers.dayOffRegistration">
+	<insert id="DayOffPOST">
+		INSERT INTO T_DAYOFF(
+		id,
+		start_Date,
+		end_Date,
+		dayoff_div,
+		reason
+		)VALUES(
+		#{id},
+		#{start_Date},
+		#{end_Date},
+		#{dayoff_div},
+		#{reason}
+		)
+	</insert>
+</mapper>
